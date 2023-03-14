@@ -1,0 +1,67 @@
+.table {
+  width: 100%;
+  margin-bottom: 15px;
+  color: var(--text);
+}
+
+.table a:hover {
+  color: white;
+}
+
+.thead {
+  color: var(--header);
+  font-size: 14px;
+}
+
+.table tr {
+  display: flex;
+  justify-content: center;
+}
+
+.tbody tr td:not(:first-child) {
+  text-align: center;
+}
+
+.name {
+  padding: 3px;
+  width: 200px;
+  flex-grow: 0;
+  margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.name:hover {
+  white-space: normal;
+}
+
+.star {
+  width: 65px;
+  flex-shrink: 0;
+}
+
+.commit {
+  width: 110px;
+  flex-shrink: 0;
+  margin-left: 10px;
+}
+
+.link {
+  width: 85px;
+  flex-shrink: 1;
+  margin-left: 10px;
+}
+
+@media (max-width: 350px) {
+  .star,
+  .commit {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .commit {
+    display: none;
+  }
+}

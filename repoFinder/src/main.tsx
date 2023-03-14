@@ -1,10 +1,21 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import { createRoot } from "react-dom/client";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import App from "./components/App";
+import "./index.css";
+const API_KEY = import.meta.env.VITE_GH_TOKEN;
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+const client = new ApolloClient({
+  uri: "https://api.github.com/graphql",
+  headers: {
+    authorization: `Bearer ${API_KEY}`,
+  },
+  cache: new InMemoryCache(),
+});
+
+const rootContainer = document.querySelector("#root");
+const root = createRoot(rootContainer);
+root.render(
+  <ApolloProvider client={client}>
     <App />
-  </React.StrictMode>,
-)
+  </ApolloProvider>
+);
