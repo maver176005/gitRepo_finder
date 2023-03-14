@@ -13,7 +13,7 @@ const client = new ApolloClient({
 });
 
 const rootContainer = document.querySelector("#root");
-const root = createRoot(rootContainer);
+const root = createRoot(rootContainer!);
 root.render(
   <ApolloProvider client={client}>
     <App />

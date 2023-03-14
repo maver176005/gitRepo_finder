@@ -10,7 +10,7 @@ export default function Search(): ReactElement {
 
   return (
     <form
-      className={styles.form}
+      className={styles}
       action="#"
       method="GET"
       onSubmit={(e) => {
@@ -19,7 +19,7 @@ export default function Search(): ReactElement {
       }}
     >
       <input
-        className={styles.form__input}
+        className={styles}
         type="search"
         id="search"
         value={valueInput}
