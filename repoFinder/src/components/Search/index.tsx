@@ -6,7 +6,6 @@ import styles from "../../index.css?inline";
 export default function Search(): ReactElement {
   const { setRequest } = useContext(SearchContext);
   const [valueInput, setValueInput] = useState("");
-  console.log(styles);
 
   return (
     <form
